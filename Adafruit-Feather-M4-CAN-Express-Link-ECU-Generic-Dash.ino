@@ -36,6 +36,10 @@ void setup() {
   // Init hardware
   Serial.begin(SERIAL_BAUD);
   while (!Serial);
+  // power on NEOPIXEL RGB LED
+  pinMode(NEOPIXEL_POWER, OUTPUT);
+  digitalWrite(NEOPIXEL_POWER, HIGH);
+  
   pinMode(PIN_CAN_STANDBY, OUTPUT);
   digitalWrite(PIN_CAN_STANDBY, false); // Turn off CAN IC standby mode
   pinMode(PIN_CAN_BOOSTEN, OUTPUT);
